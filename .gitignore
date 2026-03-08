@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+build/
+.gradle/
+product/backend/.gradle/
+product/backend/build/
+tests/test-results/
+tests/playwright-report/

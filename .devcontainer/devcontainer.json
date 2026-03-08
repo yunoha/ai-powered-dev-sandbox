@@ -1,0 +1,29 @@
+{
+  "name": "ai-powered-dev-sandbox",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "25",
+      "installGradle": true
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-playwright.playwright"
+      ]
+    }
+  },
+  "postCreateCommand": "cd product/frontend && npm install && cd ../../tests && npm install",
+  "forwardPorts": [3000, 8080]
+}
