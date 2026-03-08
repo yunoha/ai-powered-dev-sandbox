@@ -1,6 +1,21 @@
 # ai-powered-dev-sandbox
 
-## VS Code + GitHub Copilot
+生成 AI を使った開発を色々と試すためのリポジトリ。
+
+## 利用する生成 AI ツール
+
+### 基本となる AI ツール (コーディングエージェントなど)
+
+* Visual Studio Code 上で動く AI エージェント
+  * GitHub Copilot
+  * Codex
+* Codex アプリ
+
+### MCP サーバー
+
+* [GitHub MCP サーバー](https://github.com/github/github-mcp-server)
+
+## 開発の進め方
 
 以下のような形で開発を進める。
 
@@ -12,10 +27,6 @@
 * 実装・テスト: テスト駆動開発の形で、製品仕様・アーキテクチャ設計を基にテスト記述と実装を進める
   * E2E テストは tests ディレクトリに保存する
   * ソフトウェア製品のソースコードは product/{component_name} ディレクトリに保存する
-
-### 利用ツール
-
-* [GitHub MCP サーバー](https://github.com/github/github-mcp-server)
 
 ### 具体的な作業手順
 
