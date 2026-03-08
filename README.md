@@ -1,6 +1,21 @@
 # ai-powered-dev-sandbox
 
-## VS Code + GitHub Copilot
+生成 AI を使った開発を色々と試すためのリポジトリ。
+
+## 利用する生成 AI ツール
+
+### 基本となる AI ツール (コーディングエージェントなど)
+
+* Visual Studio Code 上で動く AI エージェント
+  * GitHub Copilot
+  * Codex
+* Codex アプリ
+
+### MCP サーバー
+
+* [GitHub MCP サーバー](https://github.com/github/github-mcp-server)
+
+## 開発の進め方
 
 以下のような形で開発を進める。
 
@@ -12,10 +27,6 @@
 * 実装・テスト: テスト駆動開発の形で、製品仕様・アーキテクチャ設計を基にテスト記述と実装を進める
   * E2E テストは tests ディレクトリに保存する
   * ソフトウェア製品のソースコードは product/{component_name} ディレクトリに保存する
-
-### 利用ツール
-
-* [GitHub MCP サーバー](https://github.com/github/github-mcp-server)
 
 ### 具体的な作業手順
 
@@ -41,7 +52,6 @@
     * 更新された内容は GitHub 上に push する (pull request が更新される)
     * 変更要求者及び QA 担当者は、pull request 上で更新内容を確認し、レビューする
 * 備考
-  * ブランチは `copilot-trial` ブランチをメインブランチ相当として扱うこと
   * もしこの段階でデプロイタイミングを分けたい内容であることが明確な場合は、ブランチ及び pull request を分けておくこと (※ issue も分けるかは要議論)
 
 #### 実装・テスト
