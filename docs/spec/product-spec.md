@@ -47,36 +47,8 @@
 
 ### OpenAPI スキーマ
 
-```yaml
-openapi: 3.0.3
-info:
-  title: AI Powered Dev Sandbox API
-  version: 0.1.0
-  description: Web アプリケーションのバックエンド API
-paths:
-  /api/greeting:
-    get:
-      summary: 挨拶メッセージの取得
-      operationId: getGreeting
-      responses:
-        '200':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GreetingResponse'
-components:
-  schemas:
-    GreetingResponse:
-      type: object
-      required:
-        - message
-      properties:
-        message:
-          type: string
-          description: 挨拶メッセージ
-          example: "Hello world!"
-```
+OpenAPI の正式な仕様は [openapi.yaml](./openapi.yaml) で管理する。
+本ドキュメントでは API の振る舞いとレスポンス契約を説明し、実装やコード生成のソースオブトゥルースは `docs/spec/openapi.yaml` とする。
 
 ## データモデル
 

@@ -44,18 +44,18 @@
 
 - **技術**: Spring Boot + Kotlin
 - **役割**: ビジネスロジックを提供する REST API サーバー
-- **ランタイム**: JVM (Java 21)
+- **ランタイム**: JVM (Java 25)
 - **ソースコード配置**: `product/backend/`
 
 #### 提供 API
 
-- `GET /api/greeting` — 挨拶メッセージを返す (詳細は[製品仕様書](../spec/product-spec.md)を参照)
+- `GET /api/greeting` - 挨拶メッセージを返す (詳細は[製品仕様書](../spec/product-spec.md)を参照)
 
 ### API インターフェイス
 
 - **方式**: REST (HTTP/JSON)
 - **スキーマ定義**: OpenAPI 3.0
-- **スキーマ管理**: OpenAPI 仕様ファイル (`product/api-schema/openapi.yaml`) をソースオブトゥルースとして管理する
+- **スキーマ管理**: OpenAPI 仕様ファイル (`docs/spec/openapi.yaml`) をソースオブトゥルースとして管理する
 - **コード生成**: OpenAPI スキーマからクライアントコード (フロントエンド用) およびサーバースタブ (バックエンド用) を生成する方針とする
   - フロントエンド側: openapi-generator 等を利用して TypeScript クライアントを生成
   - バックエンド側: openapi-generator 等を利用して Kotlin/Spring のインターフェイスを生成
@@ -104,7 +104,7 @@
 | ツール | 用途 |
 |--------|------|
 | Node.js (LTS) | Next.js フロントエンドの開発・ビルド |
-| JDK 21 | Spring Boot バックエンドの開発・ビルド |
+| JDK 25 | Spring Boot バックエンドの開発・ビルド |
 | Terraform | インフラ定義の管理・適用 |
 | Google Cloud CLI (gcloud) | Google Cloud リソースの操作 |
 | Docker CLI | コンテナイメージのビルド・テスト |
@@ -126,13 +126,12 @@ ai-powered-dev-sandbox/
 ├── .devcontainer/           # Dev Container 定義
 │   └── devcontainer.json
 ├── docs/
-│   ├── spec/                # 製品仕様
+│   ├── spec/                # 製品仕様と OpenAPI スキーマ
+│   │   └── openapi.yaml
 │   └── architecture/        # アーキテクチャ設計
 ├── product/
 │   ├── frontend/            # Next.js フロントエンド
 │   ├── backend/             # Spring Boot バックエンド
-│   ├── api-schema/          # OpenAPI スキーマ定義
-│   │   └── openapi.yaml
 │   └── infrastructure/      # Terraform 定義
 │       └── main.tf
 ├── tests/                   # E2E テスト
