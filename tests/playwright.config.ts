@@ -1,0 +1,17 @@
+import { defineConfig } from "@playwright/test";
+
+export default defineConfig({
+  testDir: "./e2e",
+  use: {
+    baseURL: "http://127.0.0.1:3000",
+    trace: "retain-on-failure",
+  },
+  webServer: {
+    command: "bash ./scripts/start-dev-stack.sh",
+    cwd: ".",
+    port: 3000,
+    reuseExistingServer: false,
+    timeout: 120_000,
+  },
+});
+
