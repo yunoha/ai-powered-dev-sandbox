@@ -24,6 +24,6 @@
       ]
     }
   },
-  "postCreateCommand": "cd product/frontend && npm install && cd ../../tests && npm install",
+  "postCreateCommand": "cd product/frontend && npm install && cd ../../tests && npm install && npx playwright install --with-deps",
   "forwardPorts": [3000, 8080]
 }

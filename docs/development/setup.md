@@ -45,12 +45,7 @@ Dev Container を利用する場合は、手元のマシンに以下を用意す
 
 ## 初回セットアップ後に追加で必要な作業
 
-Playwright のブラウザ本体は `postCreateCommand` ではまだ導入されないため、初回のみ以下を実行する必要がある。
-
-```bash
-cd tests
-npx playwright install --with-deps
-```
+Playwright のブラウザ本体も `postCreateCommand` で導入されるため、コンテナ作成直後から E2E テストを実行できる。
 
 バックエンドは Gradle Wrapper をまだ追加していないため、Dev Container 内で利用可能な `gradle` コマンドをそのまま使う前提である。
 
@@ -117,13 +112,11 @@ npm run test:e2e
 ## 既知の注意点
 
 - ローカルホストマシンに Node.js / Java / Gradle が入っていなくても、Dev Container 内であれば作業できる
-- Playwright ブラウザは追加インストールが必要
 - Gradle Wrapper (`gradlew`) はまだ存在しないため、Gradle が使える環境での実行が前提
 - インフラ定義 (`product/infrastructure/`) はまだ未実装
 
 ## 今後の改善候補
 
 - Gradle Wrapper の追加
-- `postCreateCommand` への Playwright ブラウザインストールの組み込み
 - フロントエンド / バックエンドの起動をまとめるタスクランナーの追加
 - CI 上での自動テスト実行
